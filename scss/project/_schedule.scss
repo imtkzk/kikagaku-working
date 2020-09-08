@@ -16,7 +16,6 @@
   height: calc(100% - 450px);
   background-image: -moz-linear-gradient( 0deg, rgb(140,217,232) 0%, rgb(133,244,187) 100%);
   background-image: -webkit-linear-gradient( 0deg, rgb(140,217,232) 0%, rgb(133,244,187) 100%);
-  background-image: -ms-linear-gradient( 0deg, rgb(140,217,232) 0%, rgb(133,244,187) 100%);
   opacity: 0.2;
 }
 
@@ -57,7 +56,6 @@
   height: vw-sp(250);
   background-image: -moz-linear-gradient( 0deg, rgb(108,228,184) 0%, rgb(40,208,137) 100%);
   background-image: -webkit-linear-gradient( 0deg, rgb(108,228,184) 0%, rgb(40,208,137) 100%);
-  background-image: -ms-linear-gradient( 0deg, rgb(108,228,184) 0%, rgb(40,208,137) 100%);
   border: vw-sp(3) solid #28d089;
   border-radius: vw-sp(25) vw-sp(25) 0 0 ;
   color: $color-base;
