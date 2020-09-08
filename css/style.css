@@ -3672,6 +3672,13 @@ span.bg-stripe:before {
   }
 }
 
+@media screen and (min-width: 1920px) {
+  .anim--hero.is-show {
+    -webkit-transform: translateX(0) translateY(100%) scale(1);
+    transform: translateX(0) translateY(100%) scale(1);
+  }
+}
+
 .anim--right {
   -webkit-transform: translateX(100px);
   transform: translateX(100px);
