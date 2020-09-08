@@ -1,0 +1,246 @@
+// main: ../style.scss
+
+/*  button
+------------------------------------------------------------------------------*/
+
+.btn__container {
+	margin: 0 auto;
+	width: 100%;
+}
+
+.btn {
+	position: relative;
+	font-family: $font2,$font1;
+}
+/* ---------------------------------- 角丸ボタン */
+
+.btn--radius {
+  position: relative;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: vw-sp(90);
+	border-radius: 2em;
+	box-shadow: 0px 6px 20px 0px rgba(0, 0, 0, 0.2);
+	text-align: center;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.btn--radius a {
+	position:relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  width: 100%;
+	height: vw-sp(90);
+	color: $color-base;
+	font-size: vw-sp(28);
+	font-weight: 700;
+	text-decoration:none;
+	transition:all .5s ease;
+	z-index: 2;
+}
+
+.btn--radius__effect {
+	position: absolute;
+	width: 100%;
+	height: vw-sp(90);
+	left: -100%;
+	background-color: $color-base;
+	transition:all .5s ease;
+	z-index: 1;
+}
+
+.btn--radius:hover .btn--radius__effect {
+	left: 0;
+}
+
+
+@media screen and (min-width: $breakpoint1) {
+
+	.btn--radius {
+		height: vw-pc(60);
+	}
+
+	.btn--radius a {
+		height: vw-pc(60);
+		font-size: vw-pc(18);
+	}
+
+	.btn--radius__effect {
+		height: vw-pc(60);
+	}
+}
+
+@media screen and (min-width: $breakpoint2) {
+
+	.btn--radius {
+		height: 60px;
+	}
+
+	.btn--radius a {
+		height: 60px;
+		font-size: 18px; font-size: 1.8rem;
+	}
+
+	.btn--radius__effect {
+		height: 60px;
+	}
+}
+
+
+.btn--arrow:after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	right: 1.5em;
+	display: inline-block;
+	width: vw-sp(24);
+	height: vw-sp(8);
+	background-image: url(../img/common/btn_mark_w.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	z-index: 3;
+}
+
+
+@media screen and (min-width: $breakpoint1) {
+
+	.btn--arrow:after {
+		width: vw-pc(16);
+		height: vw-pc(5);
+	}
+}
+
+@media screen and (min-width: $breakpoint2) {
+
+	.btn--arrow:after {
+		width: 16px;
+		height: 5px;
+	}
+}
+
+.btn--gradi:hover:after {
+	background-image: url(../img/common/btn_mark_gradi.png);
+}
+
+.btn--blue:hover:after {
+	background-image: url(../img/common/btn_mark_b.png);
+}
+
+.btn--green:hover:after {
+	background-image: url(../img/common/btn_mark_g.png);
+}
+
+.btn--orange:hover:after {
+	background-image: url(../img/common/btn_mark_o.png);
+}
+
+.btn--gradi {
+  background-image: -moz-linear-gradient( 0deg, rgb(0,204,167) 0%, rgb(0,133,209) 100%);
+  background-image: -webkit-linear-gradient( 0deg, rgb(0,204,167) 0%, rgb(0,133,209) 100%);
+  background-image: -ms-linear-gradient( 0deg, rgb(0,204,167) 0%, rgb(0,133,209) 100%);
+}
+
+.btn--blue {
+	background-image: -moz-linear-gradient( 0deg, rgb(11,186,251) 0%, rgb(66,133,236) 100%);
+  background-image: -webkit-linear-gradient( 0deg, rgb(11,186,251) 0%, rgb(66,133,236) 100%);
+  background-image: -ms-linear-gradient( 0deg, rgb(11,186,251) 0%, rgb(66,133,236) 100%);
+}
+
+.btn--green {
+  background-image: -moz-linear-gradient( 0deg, rgb(108,228,184) 0%, rgb(40,208,137) 100%);
+  background-image: -webkit-linear-gradient( 0deg, rgb(108,228,184) 0%, rgb(40,208,137) 100%);
+  background-image: -ms-linear-gradient( 0deg, rgb(108,228,184) 0%, rgb(40,208,137) 100%);
+}
+
+.btn--orange {
+  background-image: -moz-linear-gradient( 0deg, rgba(255,166,108,0.99608) 0%, rgb(255,139,99) 100%);
+  background-image: -webkit-linear-gradient( 0deg, rgba(255,166,108,0.99608) 0%, rgb(255,139,99) 100%);
+  background-image: -ms-linear-gradient( 0deg, rgba(255,166,108,0.99608) 0%, rgb(255,139,99) 100%);
+}
+
+.btn--gradi:hover {
+  border: vw-sp(6) solid #00a1c0;
+}
+
+.btn--blue:hover {
+	border: vw-sp(6) solid $color-main;
+}
+
+.btn--green:hover {
+	border: vw-sp(6) solid #29d089;
+}
+
+.btn--orange:hover {
+	border: vw-sp(6) solid #ff8c63;
+}
+
+.btn--gradi:hover a {
+	color: #00a1c0;
+}
+
+.btn--blue:hover a {
+	color: $color-main;
+}
+
+.btn--green:hover a {
+	color: #29d089;
+}
+
+.btn--orange:hover a {
+	color: #ff8c63;
+}
+
+.btn--red:hover a {
+	color: #d16a6a;
+}
+
+.btn--gradi .btn--radius__effect,
+.btn--blue .btn--radius__effect {
+	background-color: $color-base;
+}
+
+@media screen and (min-width: $breakpoint1) {
+
+	.btn--gradi:hover {
+		border: vw-pc(3) solid #00a1c0;
+	}
+
+  .btn--blue:hover {
+    border: vw-pc(3) solid $color-main;
+  }
+
+  .btn--green:hover {
+  	border: vw-pc(3) solid #29d089;
+  }
+
+  .btn--orange:hover {
+  	border: vw-pc(3) solid #ff8c63;
+  }
+
+}
+
+@media screen and (min-width: $breakpoint2) {
+
+
+  	.btn--gradi:hover {
+  		border: 3px solid #00a1c0;
+  	}
+
+	.btn--blue:hover {
+		border: 3px solid $color-main;
+	}
+
+  .btn--green:hover {
+    border: 3px solid #29d089;
+  }
+
+  .btn--orange:hover {
+    border: 3px solid #ff8c63;
+  }
+}

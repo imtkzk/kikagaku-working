@@ -1,0 +1,195 @@
+// main: ../style.scss
+
+/*  migration
+------------------------------------------------------------------------------*/
+
+.mig__container > div {
+  position: relative;
+  height: vw-sp(360);
+}
+
+.mig__container > div:nth-of-type(1) {
+  width: 100%;
+  background-image: -moz-linear-gradient( 0deg, rgb(226,227,231) 0%, rgb(200,203,211) 50%, rgb(199,200,203) 100%, rgb(200,203,210) 100%);
+  background-image: -webkit-linear-gradient( 0deg, rgb(226,227,231) 0%, rgb(200,203,211) 50%, rgb(199,200,203) 100%, rgb(200,203,210) 100%);
+  background-image: -ms-linear-gradient( 0deg, rgb(226,227,231) 0%, rgb(200,203,211) 50%, rgb(199,200,203) 100%, rgb(200,203,210) 100%);
+
+}
+
+.mig__container > div:nth-of-type(2) {
+  width: 100%;
+  background-image: -moz-linear-gradient( 0deg, rgba(199,206,216,0.99608) 0%, rgb(159,170,183) 100%);
+  background-image: -webkit-linear-gradient( 0deg, rgba(199,206,216,0.99608) 0%, rgb(159,170,183) 100%);
+  background-image: -ms-linear-gradient( 0deg, rgba(199,206,216,0.99608) 0%, rgb(159,170,183) 100%);
+
+}
+
+@media screen and (min-width: $breakpoint1) {
+
+  .mig__container {
+    display: flex;
+  }
+
+  .mig__container > div {
+    width: 50%;
+    height: vw-pc(300);
+  }
+}
+
+@media screen and (min-width: $breakpoint2) {
+
+  .mig__container > div {
+    height: 300px;
+  }
+}
+
+.mig__inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+@media screen and (max-width: $breakpoint1-max) {
+  .mig__inner {
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media screen and (min-width: $breakpoint1) {
+
+  .mig__inner {
+    top: vw-pc(55);
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+}
+
+@media screen and (min-width: $breakpoint2) {
+
+  .mig__inner {
+    top: 55px;
+  }
+}
+
+
+/* ----------------- セクション英語見出し - */
+
+.mig__heading {
+  color: $color-base;
+  font-size: vw-sp(34);
+  font-weight: 700;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.mig__time {
+  color: $color-base;
+  font-size: vw-sp(26);
+  font-weight: 700;
+  text-align: center;
+}
+
+@media screen and (min-width: $breakpoint1) {
+
+  .mig__heading {
+    font-size: vw-pc(24);
+  }
+
+  .mig__time {
+    font-size: vw-pc(16);
+  }
+}
+
+@media screen and (min-width: $breakpoint2) {
+
+  .mig__heading {
+    font-size: 24px; font-size: 2.4rem;
+  }
+
+  .mig__time {
+    font-size: 16px; font-size: 1.6rem;
+  }
+}
+
+/* ----------------- メインコンテンツ部分 - */
+
+
+.btn--mig {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: vw-sp(35) auto;
+  width: vw-sp(415);
+  height: vw-sp(110);
+  border: 1px solid $color-base;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.btn--mig a {
+  position:relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: vw-sp(1100);
+  color: $color-base;
+  font-family: $font2;
+  font-size: vw-sp(34);
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: .3em;
+  transition:all .5s ease;
+  z-index: 2;
+}
+
+.btn--mig__effect {
+  position: absolute;
+  width: 100%;
+  height: vw-sp(1100);
+  left: -100%;
+  background-color: $color-base;
+  transition:all .5s ease;
+  z-index: 1;
+}
+
+.btn--mig:hover .btn--mig__effect {
+  left: 0;
+}
+
+.mig__container div:nth-of-type(1) .btn--mig:hover a {
+  color: #c7c8ca;
+}
+
+.mig__container div:nth-of-type(2) .btn--mig:hover a {
+  color: #9ea7b2;
+}
+
+@media screen and (min-width: $breakpoint1) {
+
+  .btn--mig {
+    margin: vw-pc(25) auto;
+    width: vw-pc(405);
+    height: vw-pc(100);
+  }
+
+  .btn--mig a {
+    height: vw-pc(100);
+    font-size: vw-pc(24);
+  }
+}
+
+@media screen and (min-width: $breakpoint2) {
+
+  .btn--mig {
+    margin: 25px auto;
+    width: 405px;
+    height: 100px;
+  }
+
+  .btn--mig a {
+    height: 100px;
+    font-size: 24px; font-size: 2.4rem;
+  }
+}

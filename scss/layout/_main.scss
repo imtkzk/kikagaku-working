@@ -1,0 +1,57 @@
+// main: ../style.scss
+
+/*  layout
+------------------------------------------------------------------------------*/
+
+.container {
+	margin: 0 auto;
+  padding-top: vw-sp(150);
+	width: 100%;
+}
+
+.container__inner {
+	position: relative;
+	margin: 0 auto;
+	width: vw-sp(700);
+}
+
+.container__large__inner {
+	position: relative;
+	margin: 0 auto;
+	width: vw-sp(700);
+}
+
+@media screen and ( min-width:$breakpoint1) {
+
+  .container {
+    padding-top: vw-pc(100);
+  }
+
+	.container__inner {
+		width: vw-pc(1200);
+	}
+
+	.container__large__inner {
+		width: vw-pc(1500)
+	}
+}
+
+@media screen and ( min-width:$breakpoint2) {
+
+  .container {
+    padding-top: 100px;
+  }
+
+	.container__inner {
+		width: $max-width;
+	}
+
+	.container__large__inner {
+		width: 1400px;
+	}
+}
+
+
+.sec {
+  position: relative;
+}

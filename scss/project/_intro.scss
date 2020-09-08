@@ -1,0 +1,44 @@
+// main: ../style.scss
+
+/*  intro
+------------------------------------------------------------------------------*/
+
+.sec--intro {
+  background-image: url(../img/intro/bg.jpg);
+  background-size: cover;
+}
+
+.intro {
+  padding: vw-sp(150) 0;
+  background-image: url(../img/intro/logo.png);
+  background-position: center;
+  background-size: vw-sp(460) vw-sp(460);
+  p {
+    font-size: vw-sp(28);
+    font-weight: 600;
+    text-align: center;
+    line-height: 2.1em;
+  }
+}
+
+@media screen and (min-width: $breakpoint1) {
+
+  .intro {
+    padding: vw-pc(135) 0;
+    background-size: vw-pc(270) vw-pc(270);
+    p {
+      font-size: vw-pc(18);
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint2) {
+
+  .intro {
+    padding: 135px 0;
+    background-size: 270px 270px;
+    p {
+      font-size: 18px; font-size: 1.8rem;
+    }
+  }
+}

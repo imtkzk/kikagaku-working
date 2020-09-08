@@ -1,0 +1,111 @@
+// main: ../style.scss
+
+/*  animation
+------------------------------------------------------------------------------*/
+
+.anim {
+  opacity: 0;
+}
+
+.anim.is-show {
+  opacity: 1;
+}
+
+
+.anim--in.is-show {
+  animation: scale 1s;
+}
+
+@keyframes scale {
+
+  0%{
+    transform: scale(1.05, 1.105);
+    opacity: 0;
+  }
+  100%{
+    transform: scale(1.0, 1.0);
+    opacity: 1;
+  }
+}
+
+.anim--left {
+  -webkit-transform: translateX(-100px);
+  transform: translateX(-100px);
+}
+
+.anim--left.is-show {
+  -webkit-transform: translateX(0) scale(1);
+  transform: translateX(0) scale(1);
+  transition: transform 1s cubic-bezier(.08,.92,.35,1),opacity .5s;
+}
+
+.anim--hero {
+  -webkit-transform: translateY(30px) translateX(-50%);
+  transform: translateY(30px) translateX(-50%);
+}
+
+.anim--hero.is-show {
+  -webkit-transform: translateY(0) translateX(-50%) scale(1);
+  transform: translateY(0) translateX(-50%) scale(1);
+  transition: transform 1s cubic-bezier(.08,.92,.35,1),opacity .5s;
+}
+
+@media screen and (min-width: $breakpoint1) {
+
+  .anim--hero {
+    -webkit-transform: translateX(-100px) translateY(-50%);
+    transform: translateX(-100px) translateY(-50%);
+  }
+
+  .anim--hero.is-show {
+    -webkit-transform: translateX(0) translateY(-50%) scale(1);
+    transform: translateX(0) translateY(-50%) scale(1);
+  }
+}
+
+.anim--right {
+  -webkit-transform: translateX(100px);
+  transform: translateX(100px);
+}
+
+.anim--right.is-show {
+  -webkit-transform: translateX(0) scale(1);
+  transform: translateX(0) scale(1);
+  transition: transform 1s cubic-bezier(.08,.92,.35,1),opacity .5s;
+}
+
+.anim--top {
+  opacity: 0;
+  -webkit-transform: translateY(-30px);
+  transform: translateY(-30px);
+}
+
+.anim--top.is-show {
+  -webkit-transform: translateY(0) scale(1);
+  transform: translateY(0) scale(1);
+  transition: transform 1s cubic-bezier(.08,.92,.35,1),opacity .5s;
+  opacity: 1;
+}
+
+/* ---------------------------------- 下からフェードイン */
+
+.anim--bottom {
+  -webkit-transform: translateY(30px);
+  transform: translateY(30px);
+}
+
+.anim--bottom.is-show {
+  transform: translateY(0);
+  transition: transform 1s cubic-bezier(.08,.92,.35,1),opacity .5s;
+}
+
+/* ---------------------------------- 拡大 */
+
+.anim--scale {
+  transform: scale(0);
+  transition: transform 0.5s linear;
+}
+
+.anim--scale.is-show {
+  transform: scale(1);
+}

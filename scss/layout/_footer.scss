@@ -1,0 +1,168 @@
+// main: ../style.scss
+
+/*  footer
+------------------------------------------------------------------------------*/
+
+.footer {
+	position: relative;
+	background-color: $color-base;
+	background-image: url(../img/footer/bg.png);
+	background-position: left bottom;
+	background-size: vw-sp(587) vw-sp(303);
+	background-repeat: no-repeat;
+}
+
+.footer__inner {
+	position: relative;
+	margin: 0 auto;
+	width: calc(700 / #{$sp-width} * 100vw);
+}
+
+@media screen and (min-width: $breakpoint1) {
+
+	.footer {
+		background-size: vw-pc(587) vw-pc(303);
+	}
+
+
+		.footer__inner {
+			width: calc(1500 / #{$pc-width} * 100vw);
+		}
+}
+
+@media screen and (min-width: $breakpoint2) {
+	.footer {
+		background-size: 587px 303px;
+	}
+
+	.footer__inner {
+		width: 1400px;
+	}
+
+}
+
+/* ----------------- メニュー - */
+
+.footer__navi__container {
+	display: flex;
+	flex-wrap: wrap;
+	padding: vw-sp(60) 0;
+	margin-left: -1.6vw;
+}
+
+.footer__navi__container > div {
+	margin-left: 1.6vw;
+	margin-bottom: 6vw;
+	width: calc(50% - 1.6vw);
+}
+
+.footer__navi__main {
+	display: block;
+	font-size: vw-sp(24);
+	font-weight: 700;
+	padding: .5em 0;
+}
+
+.footer__navi__main span {
+	font-family: $font2;
+	font-weight: 700;
+}
+
+.footer__navi__main span:after {
+	content: '-';
+	margin: 0 .5em;
+}
+
+.footer__navi li a {
+	position: relative;
+	display: block;
+	padding: .5em 0;
+	font-size: vw-sp(24);
+	line-height: 1.3em;
+}
+
+.footer__navi li a:hover {
+	font-weight: 700;
+}
+
+@media screen and (min-width: $breakpoint1) {
+
+	.footer__navi__container {
+		margin-left: -4vw;
+		padding: vw-pc(45) vw-pc(45) vw-pc(65) vw-pc(45);
+	}
+
+
+	.footer__navi__container > div {
+		margin: 0 0 4vw 4vw;
+		width: calc(25% - 4vw);
+	}
+
+
+	.footer__navi__main,
+	.footer__navi > li a {
+		font-size: vw-pc(15);
+	}
+}
+
+@media screen and (min-width: 1000px) {
+
+	.footer__navi__container {
+		justify-content: space-between;
+		flex-wrap: nowrap;
+		margin-left: 0;
+		padding: vw-pc(45) 0 vw-pc(65) 0;
+	}
+
+	.footer__navi__container > div {
+		margin: 0;
+		width: auto;
+	}
+
+	.footer__navi__main,
+	.footer__navi > li a {
+		font-size: vw-pc(15);
+	}
+}
+
+@media screen and (min-width: $breakpoint2) {
+
+	.footer__navi__container {
+		padding: 45px 0 65px 0;
+	}
+
+	.footer__navi__main,
+	.footer__navi > li a {
+		font-size: 15px; font-size: 1.5rem;
+	}
+}
+
+
+/* ----------------- コピーライト - */
+
+.footer__copy {
+	padding: 1.5em 1em;
+	color: #666;
+}
+
+.footer__copy p {
+	font-family: $font2;
+	font-size: calc(20 / #{$sp-width} * 100vw);
+	font-weight: 600;
+	text-align: center;
+}
+
+@media screen and (min-width: $breakpoint1) {
+
+	.footer__copy p {
+		font-size: calc(13 / #{$pc-width} * 100vw);
+		text-align: right;
+	}
+}
+
+@media screen and (min-width: $breakpoint2) {
+
+	.footer__copy p {
+		font-size: 13px; font-size: 1.3rem;
+	}
+}

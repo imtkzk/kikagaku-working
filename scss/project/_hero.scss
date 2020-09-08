@@ -1,0 +1,208 @@
+// main: ../style.scss
+
+/*  hero
+------------------------------------------------------------------------------*/
+
+.hero {
+  position: relative;
+  padding-top: vw-sp(200);
+  background-image: url(../img/hero/hero.jpg);
+  background-size: cover;
+  background-position: center;
+  height: vw-sp(870);
+}
+
+.hero__in {
+  position: relative;
+  margin: 0 auto;
+  width: vw-sp(700);
+  height: 100%;
+}
+
+@media screen and (min-width: $breakpoint1) {
+
+  .hero {
+    padding-top: vw-pc(80);
+    height: vw-pc(720);
+  }
+
+  .hero__in {
+    width: vw-pc(1200);
+  }
+}
+
+@media screen and (min-width: $breakpoint2) {
+
+  .hero {
+    padding-top: 80px;
+    height: 720px;
+  }
+
+  .hero__in {
+    width: $max-width;
+  }
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: vw-sp(40);
+  left: 50%;
+  width: vw-sp(77);
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.hero-scroll a {
+  display: block;
+}
+
+.hero-scroll a:hover {
+  transform: translateY(-10px);
+}
+
+@media screen and (min-width: $breakpoint1) {
+
+  .hero-scroll {
+    bottom: vw-pc(40);
+    width: vw-pc(77);
+  }
+}
+
+@media screen and (min-width: $breakpoint2) {
+
+  .hero-scroll {
+    bottom: 40px;
+    width: 77px;
+  }
+}
+
+
+.hero-btn {
+  position: absolute;
+  top: vw-sp(620);
+  right: vw-sp(25);
+  width: vw-sp(220);
+  z-index: 3;
+}
+
+.hero-btn > div:nth-of-type(1) {
+  margin-bottom: 1em;
+}
+
+.btn--hero a {
+  padding: .5em 0;
+  display: block;
+  flex-wrap: wrap;
+}
+
+.btn--hero span {
+  display: block;
+  width: 100%;
+  font-size: vw-sp(20);
+}
+
+.btn--hero span:nth-of-type(1) {
+  margin-bottom: .5em;
+}
+
+@media screen and (min-width: $breakpoint1) {
+
+  .hero-btn {
+    top: vw-pc(30);
+    right: vw-pc(40);
+    width: vw-pc(200);
+  }
+
+  .btn--hero span {
+    font-size: vw-pc(15);
+  }
+}
+
+@media screen and (min-width: $breakpoint2) {
+
+  .hero-btn {
+    top: 30px;
+    right: 40px;
+    width: 200px;
+  }
+
+  .btn--hero span {
+    font-size: 15px; font-size: 1.5rem;
+  }
+}
+
+
+.hero-catch {
+  position: absolute;
+  top: vw-sp(220);
+  left: 50%;
+  padding: .2em .2em .2em .5em;
+  background-color: rgba(255,255,255,0.9);
+  font-size: vw-sp(58);
+  font-weight: 700;
+  letter-spacing: .3em;
+  span {
+    position: relative;
+    position: relative;
+    display: inline-block;
+    background: linear-gradient( to right,  #4de6ce 25%, #b2ef8e 75% );
+    color: transparent;
+    -webkit-background-clip: text;
+  }
+}
+
+.hero-catch span:after {
+  content: '';
+  position: absolute;
+  left: -.2em;
+  bottom: -.1em;
+  display: inline-block;
+  width: vw-sp(160);
+  height: vw-sp(23);
+  background-image: url(../img/entry/marker.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+@media all and (-ms-high-contrast: none) { /* IE10,11用 */
+  .hero-catch span {
+    background: none;
+    color: #4de6ce;
+  }
+}
+
+@media screen and (max-width: $breakpoint1-max) {
+
+  .hero-catch {
+    white-space: nowrap;
+    transform: translateX(-50%);
+  }
+}
+
+@media screen and (min-width: $breakpoint1) {
+
+  .hero-catch {
+    top: 50%;
+    left: 0;
+    font-size: vw-pc(48);
+    transform: translateY(-50%);
+  }
+
+  .hero-catch span:after {
+    width: vw-pc(118);
+    height: vw-pc(20);
+  }
+}
+
+@media screen and (min-width: $breakpoint2) {
+
+  .hero-catch {
+    font-size: 48px; font-size: 4.8rem;
+  }
+
+  .hero-catch span:after {
+    width: 118px;
+    height: 20px;
+  }
+}

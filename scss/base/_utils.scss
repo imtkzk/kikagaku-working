@@ -1,0 +1,47 @@
+// main: ../style.scss
+
+/*  UTILIS
+------------------------------------------------------------------------------*/
+
+/*  配置
+-------------------------------------------------------*/
+
+.left { text-align: left; }
+.right { text-align: right; }
+.center { text-align: center; }
+
+@media screen and (max-width: $breakpoint1-max) {
+	.none__sp { display: none  !important; }
+	.br__pc { display: inline; }
+	.br__sp { display: block; }
+  .br--pc { display: none;}
+}
+
+@media screen and (min-width: $breakpoint1) {
+	.none__pc { display: none  !important;}
+	.br__pc { display: block; }
+	.br__sp { display: inline; }
+  .br--sp { display: none;}
+}
+
+
+/* ---------------------------------- 段落 */
+
+.paragraph {
+  p {
+    margin-bottom: 1.5em;
+    line-height: 1.8em;
+  }
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/*  画像
+-------------------------------------------------------*/
+
+.img__fit {
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+}

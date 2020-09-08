@@ -1,0 +1,191 @@
+// main: ../style.scss
+
+/* differ
+------------------------------------------------------------------------------*/
+
+.sec--differ {
+  padding: vw-sp(100) 0;
+  background-color: #edf5f5;
+}
+
+.sec--differ:before {
+  content: '';
+  position: absolute;
+  top: vw-sp(-68);
+  left: 50%;
+  display: inline-block;
+  width: vw-sp(44);
+  height: vw-sp(137);
+  background-image: url(../img/differ/arrow.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: translateX(-50%);
+}
+
+@media screen and (min-width: $breakpoint1) {
+
+  .sec--differ {
+    padding: vw-pc(115) 0;
+  }
+
+  .sec--differ:before {
+    top: vw-pc(-51);
+    width: vw-pc(34);
+    height: vw-pc(102);
+  }
+}
+
+@media screen and (min-width: $breakpoint2) {
+
+  .sec--differ {
+    padding: 115px 0;
+  }
+
+  .sec--differ:before {
+    top: -51px;
+    width: 34px;
+    height: 102px;
+  }
+}
+
+.differ-sec-head {
+  margin-bottom: vw-sp(60);
+  padding-left: .2em;
+  font-size: vw-sp(46);
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.5em;
+  letter-spacing: .2em;
+  span {
+    margin: 0 -.5em;
+    display: inline-block;
+    background: linear-gradient( to right,  #66e2b4 25%, #2ad18a 75% );
+    color: transparent;
+    -webkit-background-clip: text;
+  }
+}
+
+@media all and (-ms-high-contrast: none) { /* IE10,11用 */
+  .differ-sec-head span {
+    background: none;
+    color: #2ad18a;
+  }
+}
+
+.differ li {
+  margin: 0 auto vw-sp(50) auto;
+  width: vw-sp(640);
+}
+
+.differ-content {
+  position: relative;
+  padding: vw-sp(45) vw-sp(20) vw-sp(40) vw-sp(20);
+  background-color: $color-base;
+  p {
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.6em;
+  }
+}
+
+.differ-num {
+  position: absolute;
+  top: vw-sp(-75);
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: vw-sp(150);
+  height: vw-sp(150);
+  background-color: $color-base;
+  border-radius: 50%;
+  font-family: $font2;
+  font-size: vw-sp(46);
+  transform: translateX(-50%);
+  span {
+    position: relative;
+    top: -.2em;
+    display: inline-block;
+    background: linear-gradient( to right,  #66e2b4 25%, #2ad18a 75% );
+    color: transparent;
+    -webkit-background-clip: text;
+  }
+}
+
+@media all and (-ms-high-contrast: none) { /* IE10,11用 */
+  .differ-num span {
+    background: none;
+    color: #2ad18a;
+  }
+}
+
+.differ-head {
+  position: relative;
+  margin-bottom: .5em;
+  color: #28d089;
+  font-size: vw-sp(34);
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.6em;
+  z-index: 2;
+}
+
+@media screen and (min-width: $breakpoint1) {
+
+  .differ-sec-head {
+    margin-bottom: vw-pc(50);
+    font-size: vw-pc(36);
+  }
+
+  .differ {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .differ li {
+    margin: 0;
+    width: vw-pc(380);
+  }
+
+  .differ-content {
+    padding: vw-pc(35) vw-pc(10) vw-pc(30) vw-pc(10);
+  }
+
+  .differ-num {
+    top: vw-pc(-50);
+    width: vw-pc(100);
+    height: vw-pc(100);
+    font-size: vw-pc(36);
+  }
+
+  .differ-head {
+    font-size: vw-pc(24);
+  }
+}
+
+@media screen and (min-width: $breakpoint2) {
+
+  .differ-sec-head {
+    margin-bottom: 50px;
+    font-size: 36px; font-size: 3.6rem;
+  }
+
+  .differ li {
+    width: 380px;
+  }
+
+  .differ-content {
+    padding: 35px 10px 30px 10px;
+  }
+
+  .differ-num {
+    top: -50px;
+    width: 100px;
+    height: 100px;
+    font-size: 36px; font-size: 3.6rem;
+  }
+
+  .differ-head {
+    font-size: 24px; font-size: 2.4rem;
+  }
+}

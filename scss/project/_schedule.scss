@@ -1,0 +1,947 @@
+// main: ../style.scss
+
+/*  schedule
+------------------------------------------------------------------------------*/
+
+.sec--schedule {
+  padding: vw-sp(50) 0 vw-sp(80) 0;
+}
+
+.sec--schedule:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: calc(100% - 450px);
+  background-image: -moz-linear-gradient( 0deg, rgb(140,217,232) 0%, rgb(133,244,187) 100%);
+  background-image: -webkit-linear-gradient( 0deg, rgb(140,217,232) 0%, rgb(133,244,187) 100%);
+  background-image: -ms-linear-gradient( 0deg, rgb(140,217,232) 0%, rgb(133,244,187) 100%);
+  opacity: 0.2;
+}
+
+@media screen and (min-width: $breakpoint1) {
+
+  .sec--schedule {
+    padding: vw-pc(25) 0 vw-pc(115) 0;
+  }
+}
+
+@media screen and (min-width: $breakpoint2) {
+
+  .sec--schedule {
+    padding: 25px 0 115px 0;
+  }
+}
+
+/* ---------------------------------- schedule */
+
+.schedule {
+  position: relative;
+  padding-top: vw-sp(250);
+}
+
+.schedule-tabs {
+  position: absolute;
+  width: 100%;
+  top: vw-sp(3);
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  z-index: 2;
+}
+
+.schedule-tab {
+  padding: vw-sp(20) vw-sp(15);
+  width: vw-sp(225);
+  height: vw-sp(250);
+  background-image: -moz-linear-gradient( 0deg, rgb(108,228,184) 0%, rgb(40,208,137) 100%);
+  background-image: -webkit-linear-gradient( 0deg, rgb(108,228,184) 0%, rgb(40,208,137) 100%);
+  background-image: -ms-linear-gradient( 0deg, rgb(108,228,184) 0%, rgb(40,208,137) 100%);
+  border: vw-sp(3) solid #28d089;
+  border-radius: vw-sp(25) vw-sp(25) 0 0 ;
+  color: $color-base;
+  cursor:pointer;
+}
+
+.schedule-tab-icon {
+  margin: 0 auto vw-sp(20) auto;
+  width: vw-sp(115);
+}
+
+.schedule-tab-content {
+  width: 100%;
+  p {
+    position: relative;
+    margin-bottom: .7em;
+  }
+}
+
+.schedule-tab-head {
+  font-weight: 700;
+}
+
+.schedule-tab.is-active {
+  border: vw-sp(3) solid #28d089;
+  border-bottom: none !important;
+  background-image: none;
+  background-color: $color-base;
+  color: #000;
+  transition: all 0.2s ease-out;
+}
+
+.schedule-panels {
+  position: relative;
+  padding: vw-sp(35) vw-sp(20) vw-sp(60) vw-sp(20);
+  background-color: $color-base;
+  border: vw-sp(3) solid #28d089;
+  border-radius: 0 0 vw-sp(20) vw-sp(20);
+  box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+.schedule-panel {
+  display:none;
+  > div {
+    margin-bottom: vw-sp(150);
+  }
+  > div:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.schedule-panel.is-show {
+  display: block;
+}
+
+@media screen and (max-width: $breakpoint1-max) {
+
+  .schedule-tab-content p {
+    font-size: vw-sp(20);
+    text-align: center;
+  }
+
+  .schedule-tab-head {
+    font-size: vw-sp(18);
+    text-align: center;
+    span {
+      font-size: 1.3em;
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint1) {
+
+  .schedule {
+    padding-top: vw-pc(165);
+  }
+
+  .schedule-tabs {
+    top: 2px;
+  }
+
+  .schedule-tab {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: vw-pc(25) vw-pc(20);
+    width: vw-pc(380);
+    height: vw-pc(165);
+    border: 2px solid #28d089;
+    border-radius: vw-pc(20) vw-pc(20) 0 0 ;
+  }
+
+  .schedule-tab-icon {
+    margin: 0;
+    width: vw-pc(112);
+  }
+
+  .schedule-tab-content {
+    width: vw-pc(170);
+
+    p:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: -2.5em;
+      width: 1.5em;
+      height: 1px;
+      background-color: $color-base;
+      transform: translateY(-50%);
+    }
+  }
+
+  .schedule-tab-head {
+    span {
+      font-size: 1.6em;
+    }
+  }
+
+  .schedule-tab.is-active {
+    border: 2px solid #28d089;
+    .schedule-tab-content {
+      p:before {
+        background-color: #28d089;
+      }
+    }
+  }
+
+  .schedule-panels {
+    padding: vw-pc(85) vw-pc(90);
+    border: 2px solid #28d089;
+    border-radius: 0 0 vw-pc(15) vw-pc(15);
+  }
+
+  .schedule-panel {
+    > div {
+      margin-bottom: vw-pc(115);
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint2) {
+
+  .schedule {
+    padding-top: 165px;
+  }
+
+  .schedule-tab {
+    padding: 25px 20px;
+    width: 380px;
+    height: 165px;
+    border-radius: 20px 20px 0 0 ;
+  }
+
+  .schedule-tab-icon {
+    width: 112px;
+  }
+
+  .schedule-tab-content {
+    width: 170px;
+  }
+
+  .schedule-panels {
+    padding: 85px 90px;
+    border-radius: 0 0 15px 15px;
+  }
+
+  .schedule-panel {
+    > div {
+      margin-bottom: 115px;
+    }
+  }
+}
+
+.inter-head {
+  margin-bottom: 1em;
+  font-size: vw-sp(34);
+  font-weight: 700;
+  line-height: 1.5em;
+  letter-spacing: .2em;
+}
+
+.inter-en {
+  position: absolute;
+  bottom: -.8em;
+  font-family: $font3;
+  color: #d1dcec;
+  font-size: vw-sp(120);
+  transform: rotate(-5deg);
+  z-index: 3;
+}
+
+.inter-en--left {
+  left: -.5em;
+}
+
+.inter-en--right {
+  right: 0;
+}
+
+@media screen and (min-width: $breakpoint1) {
+
+  .inter-head {
+    font-size: vw-pc(24);
+  }
+
+  .inter-en {
+    font-size: vw-pc(110);
+  }
+}
+
+@media screen and (min-width: $breakpoint2) {
+
+  .inter-head {
+    font-size: 24px; font-size: 2.4rem;
+  }
+
+  .inter-en {
+    font-size: 110px; font-size: 11.0rem;
+  }
+}
+
+.inter-skill {
+  margin-bottom: vw-sp(100);
+}
+
+.inter-skill-content {
+  margin-bottom: vw-sp(40);
+  width: 100%;
+}
+
+.inter-skill-image {
+  position: relative;
+  margin: 0 auto;
+  padding-right: vw-sp(15);
+  width: vw-sp(620);
+  z-index: 2;
+  > div {
+    position: relative;
+    width: vw-sp(605);
+  }
+}
+
+.inter-skill-image > div:before {
+  content: '';
+  position: absolute;
+  top: vw-sp(15);
+  left: vw-sp(15);
+  width: 100%;
+  height: 100%;
+  background-color: #def0f0;
+  z-index: -1;
+}
+
+@media screen and (min-width: $breakpoint1) {
+
+  .inter-skill {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: vw-pc(50);
+  }
+
+  .inter-skill-content {
+    margin-bottom: 0;
+    width: vw-pc(600);
+  }
+
+  .inter-skill-image {
+    margin: 0;
+    padding-right: vw-pc(15);
+    width: vw-pc(355);
+    > div {
+      width: vw-pc(355);
+    }
+  }
+
+  .inter-skill-image > div:before {
+    top: vw-pc(15);
+    left: vw-pc(15);
+  }
+}
+
+@media screen and (min-width: $breakpoint2) {
+
+  .inter-skill {
+    margin-bottom: 50px;
+  }
+
+  .inter-skill-content {
+    width: 600px;
+  }
+
+  .inter-skill-image {
+    padding-right: 15px;
+    width: 355px;
+    > div {
+      width: 355px;
+    }
+  }
+
+  .inter-skill-image > div:before {
+    top: 15px;
+    left: 15px;
+  }
+}
+
+.inter-reward {
+  margin-bottom: vw-sp(100);
+}
+
+@media screen and (min-width: $breakpoint1) {
+
+  .inter-reward {
+    margin-bottom: vw-pc(50);
+    padding: 0 vw-pc(100);
+  }
+}
+
+@media screen and (min-width: $breakpoint2) {
+
+  .inter-reward {
+    margin-bottom: 50px;
+    padding: 0 100px;
+  }
+}
+
+
+.inter-thought-content {
+  margin-bottom: vw-sp(40);
+  width: 100%;
+}
+
+.inter-thought-image {
+  position: relative;
+  margin: 0 auto;
+  padding-left: vw-sp(15);
+  width: vw-sp(620);
+  z-index: 2;
+  > div {
+    position: relative;
+    width: vw-sp(605);
+  }
+}
+
+.inter-thought-image > div:before {
+  content: '';
+  position: absolute;
+  top: vw-sp(15);
+  right: vw-sp(15);
+  width: 100%;
+  height: 100%;
+  background-color: #def0f0;
+  z-index: -1;
+}
+
+@media screen and (min-width: $breakpoint1) {
+
+  .inter-thought {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .inter-thought-content {
+    margin-bottom: 0;
+    width: vw-pc(600);
+    order: 2;
+  }
+
+  .inter-thought-image {
+    margin: 0;
+    padding-right: vw-pc(15);
+    width: vw-pc(355);
+    order: 1;
+    > div {
+      width: vw-pc(355);
+    }
+  }
+
+  .inter-thought-image > div:before {
+    top: vw-pc(15);
+    right: vw-pc(15);
+  }
+}
+
+@media screen and (min-width: $breakpoint2) {
+
+  .inter-thought-content {
+    width: 600px;
+    order: 2;
+  }
+
+  .inter-thought-image {
+    padding-right: 15px;
+    width: 355px;
+    > div {
+      width: 355px;
+    }
+  }
+
+  .inter-thought-image > div:before {
+    top: 15px;
+    right: 15px;
+  }
+}
+
+.inter-header {
+  margin-bottom: vw-sp(80);
+  text-align: center;
+}
+
+.inter-header-sub {
+  position: relative;
+  margin-bottom: .6em;
+  display: inline-block;
+  color: #28d089;
+  font-size: vw-sp(38);
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.4em;
+}
+
+.inter-header-sub:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -1.5em;
+  display: inline-block;
+  width: vw-sp(32);
+  height: vw-sp(21);
+  background-image: url(../img/schedule/left.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.inter-header-sub:after{
+  content: '';
+  position: absolute;
+  right: -1.5em;
+  bottom: 0;
+  display: inline-block;
+  width: vw-sp(32);
+  height: vw-sp(21);
+  background-image: url(../img/schedule/right.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.inter-header-main {
+  position: relative;
+  display: inline-block;
+  margin-bottom: vw-sp(55);
+  padding: .5em 0;
+  font-size: vw-sp(40);
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.4em;
+  span {
+    background: linear-gradient(transparent 60%, #ebfbf2 60%);
+  }
+}
+
+.inter-header-main:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: vw-sp(-40);
+  display: inline-block;
+  width: vw-sp(52);
+  height: vw-sp(50);
+  background-image: url(../img/schedule/kakko-left.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.inter-header-main:after{
+  content: '';
+  position: absolute;
+  right: vw-sp(-40);
+  bottom: 0;
+  display: inline-block;
+  width: vw-sp(52);
+  height: vw-sp(50);
+  background-image: url(../img/schedule/kakko-right.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.inter-header-desc {
+  padding-bottom: .5em;
+  font-size: vw-sp(26);
+  font-weight: 700;
+  text-align: center;
+  line-height: 2.4em;
+  span {
+    position: relative;
+  }
+}
+
+@media screen and (max-width: $breakpoint1-max) {
+
+  .schedule-panels .schedule-panel:nth-child(3) .inter-header-main {
+    font-size: vw-sp(34);
+  }
+}
+
+@media screen and (min-width: $breakpoint1) {
+
+  .inter-header {
+    margin-bottom: vw-pc(65);
+  }
+
+  .inter-header-sub {
+    font-size: vw-pc(28);
+  }
+
+  .inter-header-sub:before {
+    width: vw-pc(22);
+    height: vw-pc(14);
+  }
+
+  .inter-header-sub:after{
+    width: vw-pc(22);
+    height: vw-pc(14);
+  }
+
+  .inter-header-main {
+    margin-bottom: vw-pc(45);
+    padding: .3em 0;
+    font-size: vw-pc(36);
+  }
+
+  .inter-header-main:before {
+    left: vw-pc(-80);
+    width: vw-pc(52);
+    height: vw-pc(50);
+  }
+
+  .inter-header-main:after{
+    right: vw-pc(-80);
+    width: vw-pc(52);
+    height: vw-pc(50);
+  }
+
+  .inter-header-desc {
+    font-size: vw-pc(18);
+    span:after {
+      content: '';
+      position: absolute;
+      bottom: -.5em;
+      left: 0;
+      display: inline-block;
+      width: 100%;
+      height: vw-pc(3);
+      background-image: url(../img/schedule/line.png);
+      background-size: auto vw-pc(3);
+      background-repeat: repeat-x;
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint2) {
+
+  .inter-header {
+    margin-bottom: 65px;
+  }
+
+  .inter-header-sub {
+    font-size: 28px; font-size: 2.8rem;
+  }
+
+  .inter-header-sub:before {
+    width: 22px;
+    height: 14px;
+  }
+
+  .inter-header-sub:after{
+    width: 22px;
+    height: 14px;
+  }
+
+  .inter-header-main {
+    margin-bottom: 45px;
+    font-size: 36px; font-size: 3.6rem;
+  }
+
+  .inter-header-main:before {
+    left: -80px;
+    width: 52px;
+    height: 50px;
+  }
+
+  .inter-header-main:after{
+    right: -80px;
+    width: 52px;
+    height: 50px;
+  }
+
+  .inter-header-desc {
+    font-size: 18px; font-size: 1.8rem;
+    span:after {
+      height: 3px;
+      background-size: auto 3px;
+    }
+  }
+}
+
+.week {
+  position: relative;
+  margin-left: vw-sp(95);
+  width: vw-sp(560);
+}
+
+.week > li {
+  position: relative;
+  margin-bottom: vw-sp(40);
+  z-index: 2;
+}
+
+.week > li:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: vw-sp(-57);
+  width: vw-sp(3);
+  height: calc(100% + #{vw-sp(40)});
+  background-color: #28d089;
+  z-index: -1;
+}
+
+.week > li:last-child:after {
+  content: none;
+}
+
+.weelk-label {
+  content: '';
+  position: absolute;
+  top: vw-sp(-8);
+  left: vw-sp(-95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: vw-sp(75);
+  height: vw-sp(75);
+  background-color: #28d089;
+  border-radius: 50%;
+  color: $color-base;
+  font-family: $font2;
+  font-size: vw-sp(22);
+  font-weight: 700;
+}
+
+.weelk-label:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: vw-sp(20);
+  height: 1px;
+  background-color: #28d089;
+  transform: translateY(-50%);
+}
+
+.week > li:last-child {
+  margin-bottom: 0;
+}
+
+.week > li > div {
+  position: relative;
+  margin-bottom: vw-sp(2);
+  padding: 1em;
+  background-color: #f2f9f9;
+  z-index: 2;
+  > p {
+    line-height: 1.8em;
+  }
+}
+
+.week > li > div:last-child {
+  margin-bottom: 0;
+}
+
+.week-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: .8em;
+}
+
+.week-head {
+  color: #28d089;
+  font-weight: 700;
+  letter-spacing: .15em;
+}
+
+.week-cat {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: .8em;
+  padding: .4em .7em;
+  color: $color-base;
+  font-weight: 700;
+  letter-spacing: .1em;
+}
+
+.week-cat--in {
+  background-color: #f7c45c;
+}
+
+.week-cat--out {
+  background-color: #4e86c9;
+}
+
+@media screen and (min-width: $breakpoint1) {
+
+  .week {
+    margin-left: vw-pc(95);
+    width: vw-pc(895);
+  }
+
+  .week > li {
+    margin-bottom: vw-pc(30);
+  }
+
+  .week > li:after {
+    left: vw-pc(-57);
+    width: vw-pc(3);
+    height: calc(100% + #{vw-pc(30)});
+  }
+
+  .weelk-label {
+    top: vw-pc(-8);
+    left: vw-pc(-95);
+    width: vw-pc(75);
+    height: vw-pc(75);
+    font-size: vw-pc(20);
+  }
+
+  .weelk-label:after {
+    width: vw-pc(20);
+  }
+
+  .week > li > div {
+    margin-bottom: vw-pc(2);
+  }
+}
+
+@media screen and (min-width: $breakpoint2) {
+
+  .week {
+    margin-left: 95px;
+    width: 895px;
+  }
+
+  .week > li {
+    margin-bottom: 30px;
+  }
+
+  .week > li:after {
+    left: -57px;
+    width: 3px;
+    height: calc(100% + 30px);
+  }
+
+  .weelk-label {
+    top: -8px;
+    left: -95px;
+    width: 75px;
+    height: 75px;
+    font-size: 20px; font-size: 2.0rem;
+  }
+
+  .weelk-label:after {
+    width: 20px;
+  }
+
+  .week > li > div {
+    margin-bottom: 2px;
+  }
+}
+
+.week-image {
+  position: absolute;
+  z-index: 3;
+}
+
+
+@media screen and (max-width: $breakpoint1-max) {
+  .week > li:nth-child(1) .week-image {
+    right: vw-sp(63);
+    bottom: vw-sp(122);
+    width: vw-sp(60);
+  }
+
+  .schedule-panels .schedule-panel:nth-child(2) .week > li:nth-child(1) .week-image {
+    bottom: vw-sp(-35);
+  }
+
+  .schedule-panels .schedule-panel:nth-child(3) .week > li:nth-child(1) .week-image {
+    bottom: vw-sp(182);
+  }
+
+  .week > li:nth-child(4) .week-image {
+    top: vw-sp(-80);
+    right: vw-sp(40);
+    width: vw-sp(100);
+  }
+
+  .week > li:nth-child(5) .week-image {
+    right: vw-sp(25);
+    bottom: vw-sp(-60);
+    width: vw-sp(102);
+  }}
+
+  @media screen and (min-width: $breakpoint1) {
+
+    .week > li:nth-child(1) .week-image {
+      right: vw-pc(83);
+      bottom: vw-pc(-22);
+      width: vw-pc(81);
+    }
+
+    .schedule-panels .schedule-panel:nth-child(2) .week > li:nth-child(1) .week-image {
+      bottom: vw-pc(80);
+      width: vw-pc(61);
+    }
+
+    .week > li:nth-child(4) .week-image {
+      top: vw-pc(-160);
+      right: vw-pc(100);
+      width: vw-pc(181);
+    }
+
+    .schedule-panels .schedule-panel:nth-child(2) .week > li:nth-child(4) .week-image {
+      display: none
+    }
+
+    .schedule-panels .schedule-panel:nth-child(3) .week > li:nth-child(4) .week-image {
+      top: vw-pc(-130);
+    }
+
+    .week > li:nth-child(5) .week-image {
+      right: vw-pc(45);
+      bottom: vw-pc(-40);
+      width: vw-pc(152);
+    }
+
+    .schedule-panels .schedule-panel:nth-child(2) .week > li:nth-child(5) .week-image {
+      bottom: vw-pc(-80);
+      width: vw-pc(102);
+    }
+  }
+
+  @media screen and (min-width: $breakpoint2) {
+
+    .week > li:nth-child(1) .week-image {
+      right: 83px;
+      bottom: -22px;
+      width: 81px;
+    }
+
+    .schedule-panels .schedule-panel:nth-child(2) .week > li:nth-child(1) .week-image {
+      bottom: 80px;
+      width: 61px;
+    }
+
+    .week > li:nth-child(4) .week-image {
+      top: -160px;
+      right: 100px;
+      width: 181px;
+    }
+
+    .schedule-panels .schedule-panel:nth-child(3) .week > li:nth-child(4) .week-image {
+      top: -130px;
+    }
+
+    .week > li:nth-child(5) .week-image {
+      right: 45px;
+      bottom: -40px;
+      width: 152px;
+    }
+
+    .schedule-panels .schedule-panel:nth-child(2) .week > li:nth-child(5) .week-image {
+      bottom: -80px;
+      width: 102px;
+    }
+  }

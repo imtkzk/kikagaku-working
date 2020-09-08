@@ -1,0 +1,373 @@
+// main: ../style.scss
+
+/*  heading
+------------------------------------------------------------------------------*/
+
+/* ---------------------------------- main heading */
+
+.heading {
+  position: relative;
+  z-index: 2;
+}
+
+.heading__inner {
+  position: relative;
+  display: inline-block;
+}
+
+.heading__inner:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 60px;
+  height: 3px;
+  background-image: -moz-linear-gradient( 0deg, rgb(159,223,69) 0%, rgb(91,203,252) 33%, rgb(250,194,83) 66%, rgb(246,77,90) 100%);
+  background-image: -webkit-linear-gradient( 0deg, rgb(159,223,69) 0%, rgb(91,203,252) 33%, rgb(250,194,83) 66%, rgb(246,77,90) 100%);
+  background-image: -ms-linear-gradient( 0deg, rgb(159,223,69) 0%, rgb(91,203,252) 33%, rgb(250,194,83) 66%, rgb(246,77,90) 100%);
+}
+
+@media screen and (max-width: $breakpoint1-max) {
+
+  .heading {
+    text-align: center;
+  }
+
+  .heading__inner:after {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+}
+
+@media screen and (min-width: $breakpoint1) {
+
+  .heading--center {
+    text-align: center;
+  }
+
+  .heading--left {
+    text-align: left;
+  }
+
+  .heading--right {
+    text-align: right;
+    .heading__inner {
+      text-align: left;
+    }
+  }
+
+  .heading__inner {
+    min-width: vw-pc(385);
+  }
+
+  .heading__inner:after {
+    width: calc(60 / #{$pc-width} * 100vw);
+    height: calc(3 / #{$pc-width} * 100vw);
+  }
+
+  .heading--left .heading__inner:after,
+  .heading--right .heading__inner:after {
+    left: 0;
+  }
+
+  .heading--center .heading__inner:after {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+}
+
+@media screen and (min-width: $breakpoint2) {
+
+  .heading__inner {
+    min-width: 385px;
+  }
+
+  .heading__inner:after {
+    width: 60px;
+    height: 3px;
+  }
+}
+
+.heading__jp {
+  position: relative;
+  display: block;
+  padding: .7em 0;
+  font-size: calc(34 / #{$sp-width} * 100vw);
+  font-weight: 600;
+  line-height: 1.6em;
+}
+
+.heading__jp--blue {
+  color: #005dad;
+  font-size: 1.4em;
+}
+
+.heading__jp--green {
+  color: #07ab54;
+  font-size: 1.4em;
+}
+
+.heading__en {
+  position: relative;
+  display: inline-block;
+  font-family: $font2;
+  font-size: calc(46 / #{$sp-width} * 100vw);
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+@media screen and (min-width: $breakpoint1) {
+
+  .heading__jp {
+    font-size: calc(24 / #{$pc-width} * 100vw);
+  }
+
+  .heading__en {
+    font-size: calc(36 / #{$pc-width} * 100vw);
+  }
+
+  .heading__en--line:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: vw-pc(170);
+    height: 1px;
+    background-color: #000;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+  .heading--left .heading__en--line:before {
+    left: vw-pc(-200);
+  }
+}
+
+@media screen and (min-width: $breakpoint2) {
+
+  .heading__jp {
+    font-size: 24px; font-size: 2.4rem;
+  }
+
+  .heading__en {
+    font-size: 36px; font-size: 3.6rem;
+  }
+
+  .heading__en--line:before {
+    width: 170px;
+  }
+
+  .heading--left .heading__en--line:before {
+    left: -200px;
+  }
+}
+
+
+/* ---------------------------------- common heading */
+
+.cmn-head {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: vw-sp(430);
+}
+
+.cmn-head__en {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding-left: .15em;
+  color: #e9fafa;
+  font-family: $font2;
+  font-size: vw-sp(200);
+  font-weight: 800;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .15em;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.cmn-head__jp {
+  position: relative;
+  display: inline-block;
+  padding: .3em 1.5em;
+  background-color: #28d089;
+  color: $color-base;
+  font-size: vw-sp(34);
+  text-align: center;
+  font-weight: 700;
+  z-index: 2;
+}
+
+@media screen and (max-width: $breakpoint1-max) {
+
+  .sec--entry .cmn-head {
+    height: vw-sp(260);
+  }
+}
+
+@media screen and (min-width: $breakpoint1) {
+
+  .cmn-head {
+    height: vw-pc(250);
+  }
+
+  .cmn-head__en {
+    font-size: vw-pc(230);
+    white-space: nowrap;
+  }
+
+  .cmn-head__jp {
+    font-size: vw-pc(24);
+  }
+}
+
+@media screen and (min-width: $breakpoint2) {
+
+  .cmn-head {
+    height: 250px;
+  }
+
+  .cmn-head__en {
+    font-size: 230px; font-size: 23.0rem;
+  }
+
+  .cmn-head__jp {
+    font-size: 24px; font-size: 2.4rem;
+  }
+}
+
+.cmn-subhead {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto vw-sp(40) auto;
+  width: vw-sp(620);
+  height: vw-sp(150);
+}
+
+.cmn-subhead > span {
+  position: absolute;
+  display: block;
+  width: vw-sp(60);
+  height: vw-sp(60);
+  border-color: $color-main;
+  border-style: solid;
+  border-width: vw-sp(5);
+}
+
+.cmn-subhead > span:nth-of-type(1) {
+  top: 0;
+  left: 0;
+  border-right: none;
+  border-bottom: none;
+}
+
+.cmn-subhead > span:nth-of-type(2) {
+  bottom: 0;
+  right: 0;
+  border-top: none;
+  border-left: none;
+}
+
+@media screen and (min-width: $breakpoint1) {
+
+  .cmn-subhead {
+    margin: 0 auto vw-pc(30) auto;
+    width: vw-pc(700);
+    height: vw-pc(100);
+  }
+
+  .cmn-subhead > span {
+    width: vw-pc(50);
+    height: vw-pc(50);
+    border-width: vw-pc(3);
+  }
+}
+
+@media screen and (min-width: $breakpoint2) {
+
+  .cmn-subhead {
+    margin: 0 auto 30px auto;
+    width: 700px;
+    height: 100px;
+  }
+
+  .cmn-subhead > span {
+    width: 50px;
+    height: 50px;
+    border-width: 3px;
+  }
+}
+
+.cmn-mark-head {
+  position: relative;
+  padding-left: vw-sp(80);
+  font-size: vw-sp(34);
+  font-weight: 700;
+  line-height: 1.6em;
+  span {
+    position: relative;
+  }
+}
+
+.cmn-mark-head:before {
+  content: 'Q';
+  position: absolute;
+  top: vw-sp(-6);
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: vw-sp(60);
+  height: vw-sp(60);
+  background-color: $color-main;
+  border-radius: 50%;
+  color: $color-base;
+  font-family: $font2;
+  font-size: vw-sp(34);
+  font-weight: 700;
+}
+
+@media screen and (min-width: $breakpoint1) {
+
+  .cmn-mark-head {
+    padding-left: vw-pc(60);
+    font-size: vw-pc(24);
+  }
+
+  .cmn-mark-head--small {
+    font-size: vw-pc(20);
+  }
+
+  .cmn-mark-head:before {
+    top: vw-pc(-6);
+    width: vw-pc(50);
+    height: vw-pc(50);
+    font-size: vw-pc(24);
+  }
+}
+
+@media screen and (min-width: $breakpoint2) {
+
+  .cmn-mark-head {
+    padding-left: 60px;
+    font-size: 24px; font-size: 2.4rem;
+  }
+
+  .cmn-mark-head--small {
+    font-size: 20px; font-size: 2.0rem;
+  }
+
+  .cmn-mark-head:before {
+    top: -6px;
+    width: 50px;
+    height: 50px;
+    font-size: 24px; font-size: 2.4rem;
+  }
+}

@@ -1,0 +1,44 @@
+// main: ../style.scss;
+
+$color-base: #fff;
+$color-main: #0060b0;
+$color-accent: #faa924;
+$color-thin: #fff7e5;
+$color-text: #333;
+
+$font1: "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro", "メイリオ", Meyryo, sans-serif;
+$font2: 'Montserrat', sans-serif;
+$font3: 'AntroVectra', sans-serif;
+
+$breakpoint1: 801px;
+$breakpoint1-max: 800px;
+$breakpoint2: 1601px;
+$breakpoint2-max: 1600px;
+$max-width: 1200px;
+$sp-width: 750;
+$pc-width: 1600;
+
+@function vw-sp($size, $viewport:750) {
+  $rate: 100 / $viewport;
+  @return $rate * $size * 1vw;
+}
+
+@function vw-pc($size, $viewport:1600) {
+  $rate: 100 / $viewport;
+  @return $rate * $size * 1vw;
+}
+
+// Google fonts
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700,800&display=swap');
+
+// AntroVectra
+@font-face {
+	font-family: 'AntroVectra';
+	font-style: normal;
+	font-weight: 700;
+	src: url("../fonts/AntroVectra/AntroVectra-Bolder.eot");
+	src: url("../fonts/AntroVectra/AntroVectra-Bolder.eot?#iefix") format("embedded-opentype"),
+	url("../fonts/AntroVectra/AntroVectra-Bolder.woff2") format("woff2"),
+	url("../fonts/AntroVectra/AntroVectra-Bolder.woff") format("woff"),
+	url("../fonts/AntroVectra/AntroVectra-Bolder.ttf") format("truetype");
+}

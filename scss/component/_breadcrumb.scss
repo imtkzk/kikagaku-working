@@ -1,0 +1,74 @@
+// main: ../style.scss
+
+/*  breadcrumb
+------------------------------------------------------------------------------*/
+.breadcrumb__container {
+	width: 100%;
+}
+
+.breadcrumb {
+	margin: 0 auto;
+  padding: 1.5em 0;
+	display: flex;
+}
+
+.breadcrumb__home {
+  position: relative;
+}
+
+.breadcrumb__home:before {
+  content: '';
+  position: relative;
+	display: inline-block;
+  width: vw-sp(32);
+  height: vw-sp(36);
+	background-image: url(../img/common/home.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.breadcrumb li {
+  display: flex;
+	position: relative;
+	margin-right: 1em;
+	font-size: calc(24 / #{$sp-width} * 100vw);
+	line-height: 1.6em;
+}
+
+.breadcrumb li:after {
+	position: relative;
+	margin-left: 1em;
+	content: '＞';
+}
+
+.breadcrumb li:last-child {
+	margin-right: 0;
+}
+
+.breadcrumb li:last-child:after {
+	content: '';
+}
+
+@media screen and (min-width: $breakpoint1) {
+
+  .breadcrumb__home:before {
+    width: vw-pc(16);
+  	height: vw-pc(18);
+  }
+
+	.breadcrumb li {
+		font-size: calc(13 / #{$pc-width} * 100vw);
+	}
+}
+
+@media screen and (min-width: $breakpoint2) {
+
+  .breadcrumb__home:before {
+    width: 16px;
+    height: 18px;
+  }
+
+	.breadcrumb li {
+		font-size: 13px; font-size: 1.3rem;
+	}
+}

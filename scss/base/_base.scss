@@ -1,0 +1,55 @@
+// main: ../style.scss
+
+/*  THEME CSS
+------------------------------------------------------------------------------*/
+html {
+  font-size: 62.5%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  color: $color-text;
+  background-color: $color-base;
+  font-family: $font1;
+  font-size: calc(25 / #{$sp-width} * 100vw);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: .1em;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  overflow-x: hidden;
+}
+
+@media screen and (min-width: $breakpoint1) {
+  body{
+    font-size: calc(15 / #{$pc-width} * 100vw);
+  }
+}
+
+@media screen and (min-width: $breakpoint2) {
+
+  body{
+    font-size: 1.5em;
+  }
+}
+
+
+/*  リンク
+-------------------------------------------------------*/
+
+a {
+  transition: all .3s;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+a.opacity {
+  display: block;
+}
+
+a.opacity:hover {
+  opacity: 0.7;
+}
